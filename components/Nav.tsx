@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
+import Link from 'next/link';
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,7 +38,7 @@ export default function Nav() {
         }}
       >
         {/* Logo */}
-        <a
+        <Link
           href="/"
           style={{ display: 'flex', alignItems: 'center', gap: '9px', textDecoration: 'none' }}
         >
@@ -70,11 +71,11 @@ export default function Nav() {
           >
             fynfloo
           </span>
-        </a>
+        </Link>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <ThemeToggle />
-          <a
+          <Link
             href="#waitlist"
             className="btn-primary"
             style={{ fontSize: '13.5px', padding: '9px 20px' }}
@@ -89,7 +90,7 @@ export default function Nav() {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
