@@ -5,15 +5,7 @@ export default function Problem() {
     <section style={{ padding: '120px 0', borderTop: '1px solid var(--bg-border-subtle)' }}>
       <div className="container">
         {/* Header */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '80px',
-            alignItems: 'start',
-            marginBottom: '72px',
-          }}
-        >
+        <div className="problem-header">
           <div>
             <p className="label" style={{ marginBottom: '16px' }}>
               The problem
@@ -46,14 +38,7 @@ export default function Problem() {
         </div>
 
         {/* Three gap cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3,1fr)',
-            gap: '16px',
-            marginBottom: '20px',
-          }}
-        >
+        <div className="problem-cards">
           {[
             {
               num: '01',
@@ -62,7 +47,6 @@ export default function Problem() {
               body: 'Built to solve an operational problem. They manage inventory well. The customer-facing store is an afterthought — functional, not brand-worthy.',
               accent: '#f97316',
               bg: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
-              bgDark: 'linear-gradient(135deg, #1f1208 0%, #2d1a0e 100%)',
             },
             {
               num: '02',
@@ -71,7 +55,6 @@ export default function Problem() {
               body: 'Solved the hardest technical problem in their market. But a payment gateway is infrastructure, not a commerce platform. The store is always a patchwork.',
               accent: '#3b82f6',
               bg: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
-              bgDark: 'linear-gradient(135deg, #080e1f 0%, #0d1730 100%)',
             },
             {
               num: '03',
@@ -80,7 +63,6 @@ export default function Problem() {
               body: 'Genuinely polished storefronts. But built around a single gateway, priced for Western markets, and too expensive to justify at early revenue.',
               accent: '#8b5cf6',
               bg: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
-              bgDark: 'linear-gradient(135deg, #0d0a1f 0%, #160f2e 100%)',
             },
           ].map((gap) => (
             <GapCard key={gap.num} {...gap} />
@@ -136,6 +118,39 @@ export default function Problem() {
           </p>
         </div>
       </div>
+
+      <style>{`
+        .problem-header {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 80px;
+          align-items: start;
+          margin-bottom: 72px;
+        }
+        .problem-cards {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+          margin-bottom: 20px;
+        }
+
+        @media (max-width: 900px) {
+          .problem-cards {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 640px) {
+          .problem-header {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+          }
+          .problem-cards {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
     </section>
   );
 }
@@ -147,7 +162,6 @@ function GapCard({
   body,
   accent,
   bg,
-  bgDark,
 }: {
   num: string;
   tag: string;
@@ -155,7 +169,6 @@ function GapCard({
   body: string;
   accent: string;
   bg: string;
-  bgDark: string;
 }) {
   return (
     <div
@@ -167,13 +180,7 @@ function GapCard({
         background: 'var(--bg-card)',
       }}
     >
-      {/* Coloured top band with number */}
-      <div
-        style={{
-          padding: '24px 24px 20px',
-          background: bg,
-        }}
-      >
+      <div style={{ padding: '24px 24px 20px', background: bg }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <span
             style={{
@@ -216,8 +223,6 @@ function GapCard({
           {headline}
         </h3>
       </div>
-
-      {/* Body */}
       <div style={{ padding: '20px 24px 24px' }}>
         <p
           style={{
