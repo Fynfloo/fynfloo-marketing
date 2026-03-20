@@ -44,7 +44,7 @@ export default function Problem() {
               num: '01',
               tag: 'Inventory tools',
               headline: 'Stock sorted.\nStorefront poor.',
-              body: 'Built to solve an operational problem. They manage inventory well. The customer-facing store is an afterthought — functional, not brand-worthy.',
+              body: 'Built to solve an operational problem. They manage inventory well. The customer-facing store is an afterthought - functional, not brand-worthy.',
               accent: '#f97316',
               bg: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
             },
