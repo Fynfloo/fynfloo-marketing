@@ -55,8 +55,8 @@ export default function Footer() {
 
         <nav style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
           {[
-            ['Privacy', '/privacy'],
-            ['Terms', '/terms'],
+            // ['Privacy', '/privacy'],
+            // ['Terms', '/terms'],
             ['Contact', 'mailto:hello@fynfloo.com'],
           ].map(([label, href]) => (
             <a
@@ -75,31 +75,6 @@ export default function Footer() {
             </a>
           ))}
         </nav>
-
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '7px',
-            background: 'var(--bg-elevated)',
-            border: '1px solid var(--bg-border-subtle)',
-            borderRadius: '100px',
-            padding: '5px 12px',
-          }}
-        >
-          <span
-            style={{
-              width: '6px',
-              height: '6px',
-              borderRadius: '50%',
-              background: '#22c55e',
-              display: 'inline-block',
-            }}
-          />
-          <span style={{ fontSize: '11.5px', color: 'var(--text-tertiary)', fontWeight: 500 }}>
-            Building in public · 2026
-          </span>
-        </div>
       </div>
     </footer>
   );
