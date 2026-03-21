@@ -15,15 +15,16 @@ export default function Nav() {
     <>
       <style>{`
         .nav-logo-text {
-          font-size: 20px !important;
+          font-size: 25px !important;
           font-weight: 800;
+          margin-left: 8px;
           color: var(--text-primary);
           letter-spacing: -0.03em;
         }
         .nav-cta-icon { display: inline-flex; align-items: center; }
         @media (max-width: 480px) {
           .nav-cta-btn { padding: 7px 12px !important; font-size: 12px !important; gap: 4px !important; }
-          .nav-logo-text { font-size: 15px; }
+          .nav-logo-text { font-size: 15px !important;  margin-left: 6px; }
         }
       `}</style>
       <nav
@@ -51,7 +52,7 @@ export default function Nav() {
         >
           <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <Image
-              src="./images/logo.svg"
+              src="/logo-1024.png"
               alt="Fynfloo"
               width={34}
               height={34}

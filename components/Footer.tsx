@@ -20,6 +20,7 @@ export default function Footer() {
           font-size: 20px;
           font-weight: 800;
           color: var(--text-primary);
+          margin-left: 7px;
           letter-spacing: -0.03em;
         }
         .footer-tagline {
@@ -86,7 +87,7 @@ export default function Footer() {
             <div>
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Image
-                  src="./images/logo.svg"
+                  src="/logo-1024.png"
                   alt="Fynfloo"
                   width={32}
                   height={32}
