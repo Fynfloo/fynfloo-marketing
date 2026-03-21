@@ -68,7 +68,7 @@ export default function Hero() {
                 letterSpacing: '-0.01em',
               }}
             >
-              Now accepting early access — launching 2026
+              Now accepting early access - launching 2026
             </span>
           </span>
         </div>

@@ -1,14 +1,10 @@
 import type { Metadata, Viewport } from 'next';
-import { ThemeProvider } from '@/components/ThemeProvider';
 import './globals.css';
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f9f9fb' },
-    { media: '(prefers-color-scheme: dark)', color: '#08080f' },
-  ],
+  themeColor: '#f9f9fb',
 };
 
 export const metadata: Metadata = {
@@ -58,18 +54,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s=localStorage.getItem('fynfloo-theme');if(s==='dark'||s==='light'){document.documentElement.setAttribute('data-theme',s);}else{document.documentElement.setAttribute('data-theme',window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`,
-          }}
         />
         <script
           type="application/ld+json"
@@ -85,9 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

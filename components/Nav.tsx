@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import ThemeToggle from './ThemeToggle';
 import Link from 'next/link';
 
 export default function Nav() {
@@ -20,12 +19,10 @@ export default function Nav() {
         right: 0,
         zIndex: 100,
         height: '64px',
-        background: scrolled
-          ? 'color-mix(in srgb, var(--bg-base) 88%, transparent)'
-          : 'transparent',
+        background: scrolled ? 'rgba(249,249,251,0.88)' : 'transparent',
         backdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
         borderBottom: scrolled ? '1px solid var(--bg-border-subtle)' : '1px solid transparent',
-        transition: 'background 0.3s, border-color 0.3s, backdrop-filter 0.3s !important',
+        transition: 'background 0.3s, border-color 0.3s !important',
       }}
     >
       <div
@@ -37,7 +34,6 @@ export default function Nav() {
           justifyContent: 'space-between',
         }}
       >
-        {/* Logo */}
         <Link
           href="/"
           style={{ display: 'flex', alignItems: 'center', gap: '9px', textDecoration: 'none' }}
@@ -73,25 +69,22 @@ export default function Nav() {
           </span>
         </Link>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <ThemeToggle />
-          <Link
-            href="#waitlist"
-            className="btn-primary"
-            style={{ fontSize: '13.5px', padding: '9px 20px' }}
-          >
-            Get early access
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-              <path
-                d="M2.5 6.5h8M7.5 3.5l3 3-3 3"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </Link>
-        </div>
+        <Link
+          href="#waitlist"
+          className="btn-primary"
+          style={{ fontSize: '13.5px', padding: '9px 20px' }}
+        >
+          Get early access
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path
+              d="M2.5 6.5h8M7.5 3.5l3 3-3 3"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
       </div>
     </nav>
   );

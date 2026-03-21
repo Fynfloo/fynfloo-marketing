@@ -72,7 +72,7 @@ export default function ComingSoon() {
                   letterSpacing: '0.01em',
                 }}
               >
-                Launching 2026 — limited early access
+                Launching 2026 - limited early access
               </span>
             </div>
 
