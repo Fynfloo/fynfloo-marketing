@@ -20,7 +20,7 @@ export default function Footer() {
       >
         {/* Logo */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div
+          {/* <div
             style={{
               width: '24px',
               height: '24px',
@@ -37,7 +37,7 @@ export default function Footer() {
               <rect x="1" y="8.5" width="5.5" height="5.5" rx="1.5" fill="white" opacity="0.45" />
               <rect x="8.5" y="8.5" width="5.5" height="5.5" rx="1.5" fill="white" opacity="0.85" />
             </svg>
-          </div>
+          </div> */}
           <span
             style={{
               fontSize: '15px',

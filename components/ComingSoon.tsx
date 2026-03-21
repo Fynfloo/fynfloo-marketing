@@ -106,7 +106,7 @@ export default function ComingSoon() {
 
             {/* Form — white inputs on dark bg */}
             <div style={{ maxWidth: '460px', marginBottom: '16px' }}>
-              <EmailForm size="large" formspreeId="YOUR_FORMSPREE_ID" dark />
+              <EmailForm size="large" formspreeId={process.env.NEXT_PUBLIC_FORMSPREE_ID} dark />
             </div>
 
             <p style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.45)' }}>

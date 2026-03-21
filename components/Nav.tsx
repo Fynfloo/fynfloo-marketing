@@ -38,7 +38,7 @@ export default function Nav() {
           href="/"
           style={{ display: 'flex', alignItems: 'center', gap: '9px', textDecoration: 'none' }}
         >
-          <div
+          {/* <div
             style={{
               width: '30px',
               height: '30px',
@@ -50,13 +50,18 @@ export default function Nav() {
               flexShrink: 0,
             }}
           >
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-              <rect x="1" y="1" width="5.5" height="5.5" rx="1.5" fill="white" />
-              <rect x="8.5" y="1" width="5.5" height="5.5" rx="1.5" fill="white" opacity="0.65" />
-              <rect x="1" y="8.5" width="5.5" height="5.5" rx="1.5" fill="white" opacity="0.45" />
-              <rect x="8.5" y="8.5" width="5.5" height="5.5" rx="1.5" fill="white" opacity="0.85" />
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <rect width="30" height="30" rx="7" fill="#5851ea" />
+              <path
+                d="M20.5 7.5 C20.5 7.5, 23.5 10.5, 22.5 14 C21.3 18, 17.5 18.8, 14.5 17.3 C11.3 15.7, 9.5 12.3, 10.8 8.8 C12.1 5.5, 16 4.5, 19 5.8 C22.5 7.3, 24 11.5, 23 15 C21.8 18.8, 18 21, 14 21 C9.5 21, 7 17.5, 7 13 C7 8 10.5 5.5, 14 4.8"
+                fill="none"
+                stroke="white"
+                stroke-width="1.9"
+                stroke-linecap="round"
+              />
+              <circle cx="21.5" cy="21.5" r="1.5" fill="white" />
             </svg>
-          </div>
+          </div> */}
           <span
             style={{
               fontSize: '16px',

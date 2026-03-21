@@ -107,7 +107,7 @@ export default function Hero() {
 
         {/* Form */}
         <div className="fade-up d3" style={{ maxWidth: '460px', marginBottom: '16px' }}>
-          <EmailForm size="large" formspreeId="YOUR_FORMSPREE_ID" />
+          <EmailForm size="large" formspreeId={process.env.NEXT_PUBLIC_FORMSPREE_ID} />
         </div>
 
         <p
