@@ -74,17 +74,17 @@ export default function Features() {
                 {[
                   {
                     name: 'minimal-01',
-                    img: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=200&q=80&auto=format&fit=crop',
+                    img: './images/lady-with-glasses.avif',
                     label: 'Fashion',
                   },
                   {
                     name: 'warm-01',
-                    img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=200&q=80&auto=format&fit=crop',
+                    img: './images/makeup-kit.avif',
                     label: 'Beauty',
                   },
                   {
                     name: 'bold-01',
-                    img: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200&q=80&auto=format&fit=crop',
+                    img: './images/t-shirt.avif',
                     label: 'Sport',
                   },
                 ].map((t, i) => (
