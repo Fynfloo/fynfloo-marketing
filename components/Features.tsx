@@ -66,8 +66,8 @@ export default function Features() {
                   maxWidth: '380px',
                 }}
               >
-                Three focused templates - fashion, beauty, sport. Each built to compete with the
-                best-looking brands in your category. Themed to your exact colours.
+                Your store, your brand. Choose a template built for your category, then make it
+                entirely your own with your colours, fonts, and style.
               </p>
               {/* Template preview row */}
               <div className="template-row">
@@ -419,17 +419,17 @@ export default function Features() {
               overflow: 'hidden',
               border: '1px solid var(--bg-border-subtle)',
               boxShadow: 'var(--shadow-card)',
-              background: '#dcfce7',
+              background: '#e8f0ff',
             }}
           >
             <div
               style={{
                 padding: '32px 32px 32px',
-                background: 'linear-gradient(160deg, #f0fdf4 0%, #dcfce7 100%)',
+                background: 'linear-gradient(160deg, #f0f4ff 0%, #e8f0ff 100%)',
                 height: '100%',
               }}
             >
-              <p className="label" style={{ marginBottom: '10px', color: '#15803d' }}>
+              <p className="label" style={{ marginBottom: '10px', color: '#5851ea' }}>
                 Dashboard
               </p>
               <h3
@@ -446,7 +446,7 @@ export default function Features() {
               <p
                 style={{
                   fontSize: '14px',
-                  color: '#4a7c5a',
+                  color: '#5a5a72',
                   lineHeight: 1.6,
                   marginBottom: '28px',
                   maxWidth: '400px',
@@ -476,7 +476,7 @@ export default function Features() {
                     <div
                       style={{
                         fontSize: '10.5px',
-                        color: '#4a7c5a',
+                        color: '#5851ea',
                         fontWeight: 600,
                         letterSpacing: '0.06em',
                         textTransform: 'uppercase',

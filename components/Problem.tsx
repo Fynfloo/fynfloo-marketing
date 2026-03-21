@@ -60,7 +60,7 @@ export default function Problem() {
               num: '03',
               tag: 'Legacy platforms',
               headline: 'Beautiful stores.\nOne payment rail.',
-              body: 'Genuinely polished storefronts. But built around a single gateway, priced for Western markets, and too expensive to justify at early revenue.',
+              body: "Genuinely polished storefronts. But locked to one payment gateway, with subscription costs that don't match where most merchants are starting from.",
               accent: '#8b5cf6',
               bg: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
             },

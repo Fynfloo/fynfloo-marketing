@@ -24,7 +24,7 @@ export default function HowItWorks() {
           </p>
           <div className="stats-grid">
             {[
-              { value: '3', label: 'Beautiful templates', sublabel: 'fashion, beauty, sport' },
+              { value: '100%', label: 'Your brand', sublabel: 'fully themed to your colours' },
               { value: '2', label: 'Payment gateways', sublabel: 'Stripe + Paystack' },
               { value: '130+', label: 'Currencies supported', sublabel: 'auto-routed by currency' },
               { value: '< 2m', label: 'To connect a gateway', sublabel: 'no configuration needed' },
@@ -100,7 +100,7 @@ export default function HowItWorks() {
               {
                 step: '02',
                 headline: 'Connect your gateway',
-                body: 'Your currency tells us whether to show Stripe Connect or Paystack. Connect in one click — no routing logic to understand.',
+                body: 'Your currency tells us whether to show Stripe Connect or Paystack. Connect in one click - no routing logic to understand.',
                 detail: 'NGN/GHS/KES/ZAR → Paystack · Everything else → Stripe',
                 img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80&auto=format&fit=crop',
                 color: 'rgba(124,58,237,0.7)',
