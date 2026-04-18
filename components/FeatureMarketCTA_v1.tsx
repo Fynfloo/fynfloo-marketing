@@ -95,6 +95,7 @@ export default function FeatureMarketCTA() {
 
   return (
     <section
+      id="market-section"
       style={{
         position: 'relative',
         background: '#07061a',

@@ -926,6 +926,7 @@ export default function FeatureDashboard() {
 
   return (
     <section
+      id="dashboard"
       style={{ background: 'var(--section-purple-light)', padding: 'clamp(80px, 10vw, 140px) 0' }}
     >
       <div className="container">
