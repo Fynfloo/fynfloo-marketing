@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     title: 'Fynfloo - Commerce within reach',
     description:
       "Everything you need to sell online — nothing you don't. Built for the brands building the next great brand.",
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Fynfloo' }],
+    images: [{ url: '/logo-1024.png', width: 1200, height: 630, alt: 'Fynfloo' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fynfloo - Commerce within reach',
     description: "Everything you need to sell online — nothing you don't.",
-    images: ['/og-image.png'],
+    images: ['/logo-1024.png'],
   },
   alternates: { canonical: 'https://fynfloo.com' },
 };
