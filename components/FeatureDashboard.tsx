@@ -931,7 +931,7 @@ export default function FeatureDashboard() {
       <div className="container">
         <div
           ref={ref}
-          className="reveal"
+          className="reveal dashboard-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
@@ -966,6 +966,23 @@ export default function FeatureDashboard() {
       </div>
 
       <style>{`
+        .dashboard-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: clamp(40px, 6vw, 80px);
+          align-items: center;
+        }
+        @media (max-width: 768px) {
+          .dashboard-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .dashboard-grid > div:first-child {
+            order: 2;
+          }
+          .dashboard-grid > div:last-child {
+            order: 1;
+          }
+        }
         @media (max-width: 768px) {
           .reveal > div { grid-template-columns: 1fr !important; }
         }
