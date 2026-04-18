@@ -1,29 +1,29 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#f9f9fb',
+  themeColor: '#ffffff',
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://fynfloo.com'),
   title: {
-    default: 'Fynfloo — The commerce platform built without limits',
+    default: 'Fynfloo - Commerce within reach',
     template: '%s | Fynfloo',
   },
   description:
-    'Beautiful stores, Stripe or Paystack picked automatically from your currency. Every currency your customers use. Commerce infrastructure for merchants who mean business.',
+    "Fynfloo is a commerce platform for merchants building the next great brand. Everything you need to sell online — nothing you don't.",
   keywords: [
     'commerce platform',
-    'Stripe Paystack',
     'online store builder',
     'ecommerce platform',
-    'Paystack store',
-    'Stripe store',
-    'multi-gateway ecommerce',
     'sell online',
+    'storefront builder',
+    'merchant platform',
+    'growing brands',
   ],
   authors: [{ name: 'Fynfloo' }],
   creator: 'Fynfloo',
@@ -37,17 +37,16 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: 'https://fynfloo.com',
     siteName: 'Fynfloo',
-    title: 'Fynfloo — The commerce platform built without limits',
+    title: 'Fynfloo - Commerce within reach',
     description:
-      'Beautiful stores, Stripe or Paystack picked automatically. Every currency your customers use.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Fynfloo' }],
+      "Everything you need to sell online — nothing you don't. Built for the brands building the next great brand.",
+    images: [{ url: '/logo-1024.png', width: 1200, height: 630, alt: 'Fynfloo' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fynfloo — The commerce platform built without limits',
-    description: 'Beautiful stores, Stripe or Paystack picked automatically.',
-    images: ['/og-image.png'],
-    creator: '@fynfloo',
+    title: 'Fynfloo - Commerce within reach',
+    description: "Everything you need to sell online — nothing you don't.",
+    images: ['/logo-1024.png'],
   },
   alternates: { canonical: 'https://fynfloo.com' },
 };
@@ -59,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
         <script
@@ -71,13 +70,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'Fynfloo',
               url: 'https://fynfloo.com',
               logo: 'https://fynfloo.com/logo-1024.png',
-              description:
-                'Commerce platform with beautiful stores, Stripe and Paystack gateway routing.',
+              description: 'A commerce platform for merchants building the next great brand.',
             }),
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
