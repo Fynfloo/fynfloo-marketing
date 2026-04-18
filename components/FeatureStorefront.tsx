@@ -212,16 +212,17 @@ function CardCheckout() {
       </div>
 
       {/* Discount code */}
-      <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', gap: '6px', marginBottom: '20px', minWidth: 0 }}>
         <input
           placeholder="Discount code"
           readOnly
           style={{
             flex: 1,
-            padding: '10px 14px',
+            minWidth: 0,
+            padding: '10px 12px',
             border: '1px solid var(--bg-border)',
             borderRadius: '8px',
-            fontSize: '13px',
+            fontSize: '12px',
             color: 'var(--text-tertiary)',
             background: 'white',
             outline: 'none',
@@ -229,14 +230,15 @@ function CardCheckout() {
         />
         <button
           style={{
-            padding: '10px 16px',
+            padding: '10px 12px',
             background: 'var(--bg-elevated)',
             border: '1px solid var(--bg-border)',
             borderRadius: '8px',
-            fontSize: '13px',
+            fontSize: '12px',
             fontWeight: 500,
             color: 'var(--text-secondary)',
             cursor: 'pointer',
+            flexShrink: 0,
           }}
         >
           Apply
@@ -729,13 +731,13 @@ function Showcase() {
 
   return (
     <div
+      className="showcase-card"
       style={{
         background: 'white',
         borderRadius: '24px',
         padding: '24px',
         boxShadow: '0 8px 48px rgba(88,81,234,0.12), 0 2px 8px rgba(0,0,0,0.06)',
         border: '1px solid var(--bg-border-subtle)',
-        height: '480px',
         display: 'flex',
         flexDirection: 'column',
         position: 'relative',
@@ -814,12 +816,9 @@ export default function FeatureStorefront() {
       <div className="container">
         <div
           ref={ref}
-          className="reveal"
+          className="reveal storefront-grid"
           style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
             gap: 'clamp(40px, 6vw, 80px)',
-            alignItems: 'center',
           }}
         >
           {/* Text */}
@@ -849,6 +848,20 @@ export default function FeatureStorefront() {
       </div>
 
       <style>{`
+      .storefront-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: clamp(40px, 6vw, 80px);
+          align-items: center;
+        }
+        .showcase-card {
+          height: 480px;
+        }
+        @media (max-width: 768px) {
+          .storefront-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
         @media (max-width: 768px) {
           .reveal > div { grid-template-columns: 1fr !important; }
         }
