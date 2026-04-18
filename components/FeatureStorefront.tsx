@@ -26,6 +26,7 @@ function CardProductDetail() {
           src="/images/linen-blazer-01.jpg"
           alt="Linen Blazer"
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           style={{ objectFit: 'cover' }}
         />
         <div
@@ -174,6 +175,7 @@ function CardCheckout() {
             src="/images/linen-blazer-02.jpg"
             alt="Product"
             fill
+            sizes="56px"
             style={{ objectFit: 'cover' }}
           />
           <div
@@ -357,7 +359,13 @@ function CardProductGrid() {
             }}
           >
             <div style={{ position: 'relative', height: '110px' }}>
-              <Image src={p.img} alt={p.name} fill style={{ objectFit: 'cover' }} />
+              <Image
+                src={p.img}
+                alt={p.name}
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                style={{ objectFit: 'cover' }}
+              />
               {p.tag && (
                 <div
                   style={{
@@ -501,6 +509,7 @@ function CardOrderConfirmation() {
               src="/images/linen-blazer-02.jpg"
               alt="Product"
               fill
+              sizes="44px"
               style={{ objectFit: 'cover' }}
             />
           </div>
@@ -560,7 +569,13 @@ function CardStorefrontHero() {
           flexShrink: 0,
         }}
       >
-        <Image src="/images/lady-on-yellow.jpg" alt="Store" fill style={{ objectFit: 'cover' }} />
+        <Image
+          src="/images/lady-on-yellow.jpg"
+          alt="Store"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          style={{ objectFit: 'cover' }}
+        />
         <div
           style={{
             position: 'absolute',
@@ -651,7 +666,13 @@ function CardStorefrontHero() {
                 marginBottom: '6px',
               }}
             >
-              <Image src={p.img} alt={p.name} fill style={{ objectFit: 'cover' }} />
+              <Image
+                src={p.img}
+                alt={p.name}
+                fill
+                sizes="(max-width: 768px) 33vw, 15vw"
+                style={{ objectFit: 'cover' }}
+              />
             </div>
             <div
               style={{
