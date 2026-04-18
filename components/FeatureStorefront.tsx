@@ -812,7 +812,7 @@ export default function FeatureStorefront() {
   }, []);
 
   return (
-    <section style={{ background: 'var(--bg-surface)', padding: 'clamp(80px, 10vw, 140px) 0' }}>
+    <section style={{ background: 'var(--bg-surface)', padding: 'clamp(40px, 6vw, 80px) 0' }}>
       <div className="container">
         <div
           ref={ref}
