@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Features() {
   return (
     <section style={{ padding: '120px 0', borderTop: '1px solid var(--bg-border-subtle)' }}>
@@ -13,7 +15,7 @@ export default function Features() {
               fontWeight: 700,
               letterSpacing: '-0.03em',
               lineHeight: 1.1,
-              maxWidth: '480px',
+              maxWidth: '520px',
             }}
           >
             Everything you need.{' '}
@@ -25,7 +27,7 @@ export default function Features() {
 
         {/* Bento grid */}
         <div className="bento-grid">
-          {/* Card 1 — Storefront templates */}
+          {/* Card 1 — Storefront */}
           <div
             className="bento-wide"
             style={{
@@ -55,7 +57,7 @@ export default function Features() {
                   marginBottom: '8px',
                 }}
               >
-                Stores that look like you mean it.
+                Your store, your way.
               </h3>
               <p
                 style={{
@@ -66,38 +68,26 @@ export default function Features() {
                   maxWidth: '380px',
                 }}
               >
-                Your store, your brand. Choose a template built for your category, then make it
-                entirely your own with your colours, fonts, and style.
+                A storefront your customers will love from day one. Beautiful by default, yours by
+                design. Choose a template built for your category, then make it entirely your own.
               </p>
+
               {/* Template preview row */}
               <div className="template-row">
                 {[
-                  {
-                    name: 'minimal-01',
-                    img: './images/lady-with-glasses.avif',
-                    label: 'Fashion',
-                  },
-                  {
-                    name: 'warm-01',
-                    img: './images/makeup-kit.avif',
-                    label: 'Beauty',
-                  },
-                  {
-                    name: 'bold-01',
-                    img: './images/t-shirt.avif',
-                    label: 'Sport',
-                  },
+                  { name: 'minimal-01', img: '/images/lady-with-glasses.avif', label: 'Fashion' },
+                  { name: 'warm-01', img: '/images/makeup-kit.avif', label: 'Beauty' },
+                  { name: 'bold-01', img: '/images/t-shirt.avif', label: 'Sport' },
                 ].map((t, i) => (
                   <div
                     key={t.name}
                     style={{
                       flex: 1,
                       minWidth: 0,
-                      borderRadius: '10px 10px',
+                      borderRadius: '10px 10px 0 0',
                       overflow: 'hidden',
                       border: '1px solid rgba(88,81,234,0.15)',
                       borderBottom: 'none',
-
                       boxShadow:
                         i === 1
                           ? '0 -4px 20px rgba(88,81,234,0.15)'
@@ -126,9 +116,11 @@ export default function Features() {
                         />
                       ))}
                     </div>
-                    <img
+                    <Image
                       src={t.img}
                       alt={t.label}
+                      width={300}
+                      height={160}
                       style={{
                         width: '100%',
                         height: '160px',
@@ -155,7 +147,7 @@ export default function Features() {
             </div>
           </div>
 
-          {/* Card 2 — Gateway routing */}
+          {/* Card 2 — Wherever you are */}
           <div
             className="bento-narrow"
             style={{
@@ -176,7 +168,7 @@ export default function Features() {
               }}
             >
               <p className="label" style={{ marginBottom: '10px', color: '#7c3aed' }}>
-                Payments
+                Wherever you are
               </p>
               <h3
                 style={{
@@ -188,7 +180,7 @@ export default function Features() {
                   lineHeight: 1.2,
                 }}
               >
-                Your gateway, chosen automatically.
+                Your market, your customers.
               </h3>
               <p
                 style={{
@@ -198,8 +190,8 @@ export default function Features() {
                   marginBottom: '24px',
                 }}
               >
-                Set your store currency at onboarding. Stripe or Paystack activates - no
-                configuration needed.
+                Fynfloo works for your business exactly as it is, right now. Your currency, your
+                customers, without any manual configuration.
               </p>
               <div
                 style={{
@@ -212,29 +204,36 @@ export default function Features() {
               >
                 {[
                   {
-                    currencies: 'NGN · GHS · KES · ZAR',
-                    gateway: 'Paystack',
-                    color: '#00b4d8',
-                    bg: 'rgba(0,180,216,0.08)',
-                    border: 'rgba(0,180,216,0.2)',
+                    region: 'United Kingdom',
+                    currency: 'GBP £',
+                    color: '#5851ea',
+                    bg: 'rgba(88,81,234,0.08)',
+                    border: 'rgba(88,81,234,0.2)',
                   },
                   {
-                    currencies: 'GBP · USD · EUR · AUD',
-                    gateway: 'Stripe',
-                    color: '#635bff',
-                    bg: 'rgba(99,91,255,0.08)',
-                    border: 'rgba(99,91,255,0.2)',
+                    region: 'United States',
+                    currency: 'USD $',
+                    color: '#059669',
+                    bg: 'rgba(5,150,105,0.08)',
+                    border: 'rgba(5,150,105,0.2)',
                   },
                   {
-                    currencies: '130+ more currencies',
-                    gateway: 'Stripe',
-                    color: '#635bff',
-                    bg: 'rgba(99,91,255,0.05)',
-                    border: 'rgba(99,91,255,0.1)',
+                    region: 'Europe',
+                    currency: 'EUR €',
+                    color: '#2563eb',
+                    bg: 'rgba(37,99,235,0.08)',
+                    border: 'rgba(37,99,235,0.2)',
+                  },
+                  {
+                    region: 'Your market',
+                    currency: 'Your currency',
+                    color: '#7c3aed',
+                    bg: 'rgba(124,58,237,0.06)',
+                    border: 'rgba(124,58,237,0.15)',
                   },
                 ].map((row) => (
                   <div
-                    key={row.currencies}
+                    key={row.region}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -247,13 +246,12 @@ export default function Features() {
                   >
                     <span
                       style={{
-                        fontSize: '11.5px',
+                        fontSize: '12px',
                         fontWeight: 500,
                         color: '#0d0d1a',
-                        letterSpacing: '0.01em',
                       }}
                     >
-                      {row.currencies}
+                      {row.region}
                     </span>
                     <span
                       style={{
@@ -268,20 +266,15 @@ export default function Features() {
                         marginLeft: '8px',
                       }}
                     >
-                      {row.gateway}
+                      {row.currency}
                     </span>
                   </div>
                 ))}
-                <div style={{ textAlign: 'center', marginTop: '4px' }}>
-                  <span style={{ fontSize: '11px', color: '#9898b0' }}>
-                    Auto-routed · no manual selection
-                  </span>
-                </div>
               </div>
             </div>
           </div>
 
-          {/* Card 3 — Products & variants */}
+          {/* Card 3 — Products */}
           <div
             className="bento-narrow"
             style={{
@@ -314,7 +307,7 @@ export default function Features() {
                   lineHeight: 1.2,
                 }}
               >
-                Variants, stock, SEO - all built in.
+                Variants, stock, SEO — all built in.
               </h3>
               <p
                 style={{
@@ -337,9 +330,11 @@ export default function Features() {
                     boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
                   }}
                 >
-                  <img
+                  <Image
                     src="/images/linen-blazer.jpg"
                     alt="Linen Blazer — Cream"
+                    width={400}
+                    height={120}
                     style={{
                       width: '100%',
                       height: '120px',
@@ -441,7 +436,7 @@ export default function Features() {
                   marginBottom: '8px',
                 }}
               >
-                One place. Everything.
+                Everything in one place.
               </h3>
               <p
                 style={{
@@ -452,8 +447,8 @@ export default function Features() {
                   maxWidth: '400px',
                 }}
               >
-                Orders, customers, discounts, shipping. One clean dashboard. No tabs, no exports, no
-                switching tools.
+                Products, orders, customers, and payments — all from one dashboard that makes sense
+                from the moment you log in. No integrations, no tab switching.
               </p>
               <div className="stats-row">
                 {[
@@ -469,7 +464,7 @@ export default function Features() {
                       padding: '16px',
                       borderRadius: '12px',
                       background: 'rgba(255,255,255,0.85)',
-                      border: '1px solid rgba(21,128,61,0.1)',
+                      border: '1px solid rgba(88,81,234,0.1)',
                       boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
                     }}
                   >
@@ -519,7 +514,6 @@ export default function Features() {
       </div>
 
       <style>{`
-        /* ── Desktop: 3-col bento ── */
         .bento-grid {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
@@ -538,23 +532,16 @@ export default function Features() {
         .stats-row {
           display: flex;
           gap: 12px;
-          align-items: flex-end;
         }
 
-        /* ── Tablet 768px: 2-col, wide cards full width ── */
         @media (max-width: 900px) {
           .bento-grid {
             grid-template-columns: 1fr 1fr;
           }
-          .bento-wide {
-            grid-column: span 2;
-          }
-          .bento-narrow {
-            grid-column: span 1;
-          }
+          .bento-wide   { grid-column: span 2; }
+          .bento-narrow { grid-column: span 1; }
         }
 
-        /* ── Mobile 640px: single column, everything full width ── */
         @media (max-width: 640px) {
           .bento-grid {
             grid-template-columns: 1fr;
@@ -564,8 +551,6 @@ export default function Features() {
           .bento-narrow {
             grid-column: span 1;
           }
-
-          /* Template previews: show only 1 card on mobile */
           .template-row {
             gap: 8px;
           }
@@ -574,12 +559,9 @@ export default function Features() {
             display: none;
           }
           .template-row > div:first-child {
-            transform: none !important;
             border-radius: 10px !important;
             border-bottom: 1px solid rgba(88,81,234,0.15) !important;
           }
-
-          /* Stats: stack vertically on mobile */
           .stats-row {
             flex-direction: column;
             gap: 8px;

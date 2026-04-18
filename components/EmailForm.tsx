@@ -76,6 +76,13 @@ export default function EmailForm({
 
   return (
     <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+      <style>{`
+    .email-form-btn { flex-shrink: 0; }
+    @media (max-width: 480px) {
+      .email-form-input { width: 100%; flex: none !important; }
+      .email-form-btn { width: 100%; justify-content: center; }
+    }
+  `}</style>
       <input
         type="email"
         required
@@ -86,15 +93,15 @@ export default function EmailForm({
         style={{
           flex: '1 1 200px',
           minWidth: 0,
-          background: dark ? 'rgba(255,255,255,0.1)' : 'var(--bg-card)',
+          background: dark ? 'rgba(255,255,255,0.12)' : 'var(--bg-card)',
           border: `1px solid ${dark ? 'rgba(255,255,255,0.2)' : 'var(--bg-border)'}`,
-          borderRadius: '8px',
-          padding: lg ? '13px 16px' : '10px 14px',
+          borderRadius: '100px',
+          padding: lg ? '13px 20px' : '10px 14px',
           fontSize: lg ? '15px' : '14px',
           color: dark ? '#ffffff' : 'var(--text-primary)',
           outline: 'none',
-          backdropFilter: dark ? 'blur(12px)' : 'none',
           letterSpacing: '-0.01em',
+          transition: 'border-color 0.15s',
         }}
         onFocus={(e) =>
           (e.currentTarget.style.borderColor = dark ? 'rgba(255,255,255,0.5)' : 'var(--accent)')
@@ -106,26 +113,35 @@ export default function EmailForm({
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="btn-primary"
+        className="email-form-btn"
         style={{
+          background: dark ? 'white' : 'var(--accent)',
+          color: dark ? 'var(--accent)' : 'white',
           fontSize: lg ? '15px' : '14px',
-          padding: lg ? '13px 26px' : '10px 22px',
-          opacity: status === 'loading' ? 0.7 : 1,
+          fontWeight: 600,
+          padding: lg ? '13px 28px' : '10px 22px',
+          borderRadius: '100px',
+          border: 'none',
           cursor: status === 'loading' ? 'wait' : 'pointer',
+          opacity: status === 'loading' ? 0.7 : 1,
+          letterSpacing: '-0.01em',
+          whiteSpace: 'nowrap',
+          transition: 'transform 0.15s, box-shadow 0.15s',
+        }}
+        onMouseEnter={(e) => {
+          if (status !== 'loading') {
+            e.currentTarget.style.transform = 'translateY(-1px)';
+            e.currentTarget.style.boxShadow = dark
+              ? '0 6px 24px rgba(255,255,255,0.2)'
+              : '0 6px 24px rgba(13,13,26,0.2)';
+          }
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.boxShadow = 'none';
         }}
       >
-        {status === 'loading' ? 'Joining...' : buttonText}
-        {status !== 'loading' && (
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-            <path
-              d="M2.5 6.5h8M7.5 3.5l3 3-3 3"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        )}
+        {status === 'loading' ? 'Joining…' : buttonText}
       </button>
       {status === 'error' && (
         <p style={{ width: '100%', fontSize: '12.5px', color: '#ef4444', marginTop: '4px' }}>
