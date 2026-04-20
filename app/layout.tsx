@@ -66,11 +66,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'Fynfloo',
-              url: 'https://fynfloo.com',
-              logo: 'https://fynfloo.com/logo-1024.png',
-              description: 'A commerce platform for merchants building the next great brand.',
+              '@graph': [
+                {
+                  '@type': 'WebSite',
+                  name: 'Fynfloo',
+                  url: 'https://fynfloo.com',
+                },
+                {
+                  '@type': 'Organization',
+                  name: 'Fynfloo',
+                  url: 'https://fynfloo.com',
+                  logo: 'https://fynfloo.com/logo-1024.png',
+                  description: 'A commerce platform for merchants building the next great brand.',
+                },
+              ],
             }),
           }}
         />
